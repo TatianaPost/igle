@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype html> 
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
@@ -8,55 +8,33 @@
 	<title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
 	<?php wp_head(); ?>
 </head>
+
+
 <body <?php body_class(); ?> >
 
-<?php /*if(ale_get_option('sitelogo')){
-    echo "<img src='".ale_get_option('sitelogo')."' />";
-}*/ ?>
-<?php ale_option('sitelogo'); ?>
+	<header class="top_header">
+		<div class="wrapper cf">
+			<div class="header_third search_section menu_button">
+				search
+			</div>
 
-<i class="fa fa-address-book" aria-hidden="true"></i>
+			<div class="header_third logo_section">
+				<a href="<?php echo home_url("/"); ?>" class="logo_link"> 
+					<img src="<?php echo ale_get_option('sitelogo')?>">
+				</a>
+			</div>
 
-<section class="slider-example">
-	<div class="newhomeslider wrapper">
-		<ul class="slides">
-			<?php $slider = ale_sliders_get_slider('test-slider');  ?>
-			<?php if($slider):?>
-				<?php foreach ($slider['slides'] as $slide) : ?>
-					<li>
-						<figure>
-							<img src="<?php echo $slide['image']; ?>" alt="<?php echo $slide['title']; ?>" />
-							<figcaption>
-								<div class="sliderdata">
-									<?php if($slide['title']){ ?>
-										<div class="titleslide headerfont">
-											<?php if($slide['url']){
-												echo "<a href='".$slide['url']."'>";
-											} ?>
+			<div class="header_third social_section">
+				<?php if(ale_get_option('yt')){ ?><a href="<?php echo ale_get_option('yt') ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a> <?php } ?>
+				<?php if(ale_get_option('insta')){ ?> <a href="<?php echo ale_get_option('insta') ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a><?php } ?>
+				<?php if(ale_get_option('twi')){ ?><a href="<?php echo ale_get_option('twi') ?>"><i class="fa fa-twitter-square" aria-hidden="true"></i></a><?php } ?>
+				<?php if(ale_get_option('fb')){ ?><a href="<?php echo ale_get_option('fb') ?>"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><?php } ?>
+			</div>
+			
+		</div>
+	</header>
+	<section class="home_slider">
+		
+	</section>
 
-											<?php echo $slide['title']; ?>
 
-											<?php if($slide['url']){
-												echo "</a>";
-											} ?>
-										</div>
-									<?php } ?>
-									<?php if($slide['description']){ ?>
-										<div class="descriptionslide">
-											<?php echo $slide['description']; ?>
-										</div>
-									<?php } ?>
-									<?php if($slide['html']){ ?>
-										<div class="descriptionslide">
-											<?php echo $slide['html']; ?>
-										</div>
-									<?php } ?>
-								</div>
-							</figcaption>
-						</figure>
-					</li>
-				<?php endforeach; ?>
-			<?php endif;?>
-		</ul>
-	</div>
-</section>
