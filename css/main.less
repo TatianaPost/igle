@@ -5,6 +5,7 @@
 @color_darkgrey: #959b9a;
 @dark_color: #262626;
 @yellow_color: #eedf9c;
+@hover_color: #804258;
 
 /* Your Custom code here */
 
@@ -24,6 +25,7 @@ Header Styles
 	position: relative;
 
 	.top_navigation {
+		display: none;
 		position: absolute;
 		top: 100%;
 		left: 0;
@@ -31,6 +33,25 @@ Header Styles
 		height: 90px;
 		background-color: @dark_color;
 		z-index: 99;
+
+		.wrapper {
+			position: relative;
+			&::before {
+				position: absolute;
+				content: '';
+				top: 0;
+				left: 0 ;
+				margin-left: 5px;
+				margin-top: -4px;
+
+				    display: inline-block;
+				    width: 0;
+				    height: 0;
+				    border-style: solid;
+				    border-width: 0 3.5px 4px 3.5px;
+				    border-color: transparent transparent @dark_color transparent;
+			}
+		}
 
 		.donate_button {
 			float: right;
@@ -63,6 +84,108 @@ Header Styles
 				height: 90px;
 				position: relative;
 				margin-right: 2px;
+
+				&:hover {
+					.sub-menu {
+						display: block;
+					}
+				}
+
+				.sub-menu {
+					background-color: #FFF;
+					color: red;
+					width: 140px;
+					box-sizing: border-box;
+					border-top: 3px solid @yellow_color;
+					margin-top: -3px;
+					padding-top: 25px;
+					padding-bottom: 25px;
+					position: relative;
+					display: none;
+
+					&::before{
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 50%;
+						margin-left: -3px;
+						margin-top: -7px;
+
+						    display: inline-block;
+						    width: 0;
+						    height: 0;
+						    border-style: solid;
+						    border-width: 0 3.5px 4px 3.5px;
+						    border-color: transparent transparent @yellow_color transparent;
+					}
+
+					li {
+						color: @color_darkgrey;
+						font-size: 13px;
+						display: block;
+						height: 40px;
+						line-height: 40px;
+						float: none;
+						width: 100%;
+						margin: 0;
+
+						&.menu-item-has-children {
+							&::after {
+								color: @yellow_color;
+								content:"\f054";
+								font: normal normal normal 6px/1 FontAwesome;
+								position: absolute;
+								top: 50%;
+								left: 80%;
+								margin-top: -3px;
+							}
+						}
+
+						&:hover {
+							.sub-menu {
+								display: block;
+							}
+						}
+
+						.sub-menu {
+							position: absolute;
+							left: 100%;
+							top:0;
+							border:0;
+							border-left: 2px solid #f7f7f7;
+							display: none;
+
+							&::before {
+								display:none;
+							}
+						}
+
+						&:last-child {
+							a {
+								border-bottom: 0;
+							}	
+						}
+
+						a {
+							color: inherit;
+							height: auto;
+							margin-left: 25px;
+							margin-right: 25px;
+							padding: 0;
+							display: block;
+							line-height: 40px;
+							box-sizing: border-box;
+							border-bottom: 1px solid @color_grey;
+							.transition(all 300ms ease-in-out);
+
+							&:hover {
+								color: @hover_color;
+								text-decoration: underline;
+								.transition(all 300ms ease-in-out);
+							}
+						}
+					}
+				}
 
 				&.current_page_item, &.current-menu-item {
 					a {
