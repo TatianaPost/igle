@@ -32,13 +32,13 @@ function aletheme_get_options() {
 						"type" => "heading");
 
     $options[] = array( "name" => "Site Logo",
-                        "desc" => "Upload or put the site logo link (Default logo size: 133-52px)",
+                        "desc" => "Upload or put the site logo link",
                         "id" => "ale_sitelogo",
                         "std" => "",
                         "type" => "upload");
 
     $options[] = array( "name" => "Site Footer Logo",
-                        "desc" => "Upload or put the site logo link (Default logo size: 133-52px)",
+                        "desc" => "Upload or put the site logo link",
                         "id" => "ale_sitelogofooter",
                         "std" => "",
                         "type" => "upload");
@@ -221,7 +221,29 @@ function aletheme_get_options() {
 						"type" => "checkbox");
 
 
+    $options[] = array( "name" => "Footer Settings",
+                        "type" => "heading");
 	
+    $options[] = array( "name" => "Phone Number",
+                        "desc" => "Insert your phone number",
+                        "id" => "ale_footer_phone",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Address",
+                        "desc" => "Insert your address",
+                        "id" => "ale_footer_address",
+                        "std" => "",
+                        "type" => "text");
+
+    $options[] = array( "name" => "Email",
+                        "desc" => "Insert your email",
+                        "id" => "ale_footer_mail",
+                        "std" => "",
+                        "type" => "text");
+    
+
+
 	$options[] = array( "name" => "Advanced Settings",
 						"type" => "heading");
 
