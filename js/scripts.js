@@ -44,6 +44,12 @@ jQuery(function($) {
         $('.top_navigation').css('display', 'none');
     });
 
+    $('.latest-tweets').flexslider({
+        animation:'slide',
+        directionNav: false,
+        selector: "ul > li"
+    });
+
 });
 
 Modernizr.addTest('ipad', function () {

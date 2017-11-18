@@ -36,7 +36,7 @@
                     <?php } ?>
                 </div>
                 <div class="twitter footer_inner">
-                    <h5><?php _e('To do later','aletheme'); ?></h5>
+                    <?php get_sidebar('footer'); ?>
                 </div>
             </div>
         </div>
