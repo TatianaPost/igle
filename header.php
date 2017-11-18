@@ -59,6 +59,14 @@
 			
 		</nav>
 	</header>
+
+	<?php if(!is_page_template('page-home.php')) { ?>
+	<section class="inner_header">
+		<div class="wrapper">
+			<?php echo get_breadcrumbs(); ?>
+		</div>
+	</section>
+	<?php } ?>
 	
 
 
