@@ -1,4 +1,9 @@
 <?php
+/*====================================
+===   T H E M E    O P T I O N S   ===
+====================================*/
+
+
 /**
  * Get current theme options
  * 
@@ -27,6 +32,12 @@ function aletheme_get_options() {
 	$imagepath =  ALETHEME_URL . '/assets/images/';
 	
 	$options = array();
+
+
+
+    /*
+    T H E M E
+     */
 		
 	$options[] = array("name" => "Theme",
 						"type" => "heading");
@@ -104,36 +115,64 @@ function aletheme_get_options() {
                         "std" => "",
                         "type" => "text");
 
+
+/*
+T Y P O G R A P H Y
+ */
+
     $options[] = array( "name" => "Typography",
                         "type" => "heading");
 
-    $options[] = array( "name" => "Select the body Font from Google Library",
-                        "desc" => "The default Font is - Raleway",
+/* 1st */
+    $options[] = array( "name" => "1st Select the body Font from Google Library",
+                        "desc" => "The default Font is - Droid Serif",
                         "id" => "ale_headerfont",
-                        "std" => "Raleway",
+                        "std" => "Droid+Serif",
                         "type" => "select",
                         "options" => $headerfont);
 
     $options[] = array( "name" => "Select the body Font (Extended) from Google Library",
-                        "desc" => "The default Font (extended) is - 600",
+                        "desc" => "The default Font (extended)",
                         "id" => "ale_headerfontex",
-                        "std" => "600",
+                        "std" => "400,400i,700,700i",
                         "type" => "text",
                         );
 
-    $options[] = array( "name" => "Select the Headers Font from Google Library",
-                        "desc" => "The default Font is - Libre Baskerville",
+/* 2nd */
+
+    $options[] = array( "name" => "2nd Select the Headers Font from Google Library",
+                        "desc" => "The default Font is - Playfair Display SC",
                         "id" => "ale_mainfont",
-                        "std" => "Libre+Baskerville",
+                        "std" => "Playfair+Display+SC",
                         "type" => "select",
                         "options" => $headerfont);
 
     $options[] = array( "name" => "Select the Headers Font (Extended) from Google Library",
                         "desc" => "The default Font (extended) is - 400,400italic",
                         "id" => "ale_mainfontex",
-                        "std" => "400,400italic",
+                        "std" => "400,400i,700,700i,900,900i",
                         "type" => "text",
                         );
+
+/* 3rd */
+
+    $options[] = array( "name" => "3rd Select the Headers Font from Google Library",
+                        "desc" => "The default Font is - Playfair Display",
+                        "id" => "ale_thirdfont",
+                        "std" => "Playfair+Display",
+                        "type" => "select",
+                        "options" => $headerfont);
+
+    $options[] = array( "name" => "Select the Headers Font (Extended) from Google Library",
+                        "desc" => "The default Font (extended) is - 400",
+                        "id" => "ale_thirdfont",
+                        "std" => "400",
+                        "type" => "text",
+                        );
+
+
+
+/* H1 */
 
     $options[] = array( 'name' => "H1 Style",
                         'desc' => "Change the h1 style",
@@ -176,6 +215,11 @@ function aletheme_get_options() {
                         'id' => 'ale_bodystyle',
                         'std' => array('size' => '11px','face' => 'Libre+Baskerville','style' => 'normal','color' => '#111111'),
                         'type' => 'typography');
+
+
+/*
+S O C I A L
+ */
 
 	$options[] = array( "name" => "Social",
 						"type" => "heading");
@@ -221,6 +265,11 @@ function aletheme_get_options() {
 						"type" => "checkbox");
 
 
+/*
+F O O T E R  S E T T I N G S
+ */
+
+
     $options[] = array( "name" => "Footer Settings",
                         "type" => "heading");
 	
@@ -241,6 +290,11 @@ function aletheme_get_options() {
                         "id" => "ale_footer_mail",
                         "std" => "",
                         "type" => "text");
+
+
+/*
+A D V A N C E D    S E T T I N G S
+ */
     
 
 
@@ -305,6 +359,15 @@ jQuery(document).ready(function() {
 
 <?php
 }
+
+
+
+
+/*====================================
+======   M E T A    B O X E S   ======
+====================================*/
+
+
 
 /**
  * Add Metaboxes
